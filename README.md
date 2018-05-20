@@ -20,3 +20,6 @@ cd configs
 git config core.worktree "../../"
 
 git reset --hard origin/master
+
+There are a couple of repos that need to be fetched for Vim
+I threw them into the ~/bin/setup.sh script
