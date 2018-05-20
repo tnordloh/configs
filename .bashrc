@@ -44,13 +44,6 @@ source $(brew --prefix nvm)/nvm.sh
 shopt -s lithist
 
 source ~/.private_variables
-export CDPATH=~:~/code/lloyd
-
-. $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash
-
- . /Users/tim/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
 
  alias port='function _blah(){ export ICFP_PORT=$1; };_blah'
