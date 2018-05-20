@@ -1,0 +1,1 @@
+CursorLineCurrentWindow.vba: call delete('/Users/tim/.vim/plugin/CursorLineCurrentWindow.vim')|call delete('/Users/tim/.vim/doc/CursorLineCurrentWindow.txt')

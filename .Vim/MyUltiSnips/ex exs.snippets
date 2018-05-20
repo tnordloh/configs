@@ -1,0 +1,40 @@
+priority -55
+
+snippet defm "Create a module"
+defmodule ${1:ModuleName} do
+  $0
+end
+endsnippet
+
+snippet UseGen "Use genServer"
+use GenServer
+
+${1:def init(${2:initial_value}) do
+  {:ok, ${3:YourClass}.new }
+end}
+
+${4:def start do
+  GenServer.start(${5:__MODULE__}, ${6:nil}) 
+end}
+
+${7:def handle_call({${8::match_atom}, ${9:info_to_process}}, _, ${10:gen_server_variable}) do
+  ${11}
+end}
+
+endsnippet
+
+snippet map "piped map"
+|> Enum.map(${1:fn(var) -> end)})
+endsnippet
+
+snippet Map "unpiped map"
+Enum.map(${1:enumerable}, ${2:fn(var) -> end)})
+endsnippet
+
+snippet filter "piped filter"
+|> Enum.filter(${1:fn(var) -> end)})
+endsnippet
+
+snippet Filter "unpiped filter"
+Enum.filter(${1:enumerable}, ${2:fn(var) -> end)})
+endsnippet

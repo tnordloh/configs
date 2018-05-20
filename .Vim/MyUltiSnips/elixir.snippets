@@ -1,0 +1,86 @@
+priority -49
+
+snippet case "case template"
+case ${1:expression} do
+  ${2:result} -> ${0:action}
+end
+endsnippet
+
+snippet iop "io puts"
+IO.puts($0)
+endsnippet
+
+snippet ioi "io inspect"
+IO.inspect($0)
+endsnippet
+
+snippet fn "fn macro" i
+&(${1:&1 + &2})
+endsnippet
+
+snippet fn "fn 1-arg" i
+fn(${1:var}) -> $0 end
+endsnippet
+
+snippet "[Ee]num?" "generic enum" r
+Enum.${1:function_name}(${2:${3:enumerable}, }fn$0)
+endsnippet
+
+snippet "[Ee]nu(ma)?" "generic enum with acc" r
+Enum.${1:function_name}(${2:${3:enumerable}, }${4:${5:acc}, }fn$0)
+endsnippet
+
+snippet fn "fn 2-args" i
+fn(${1:${2:var}, }${3:acc}) -> $0 end
+endsnippet
+
+snippet map
+Enum.map(${1:${2:enumerable}, }fn$0)
+endsnippet
+
+snippet "red(uce)?" "comment" r
+Enum.reduce(${1:${2:enumerable}, }fn$0)
+endsnippet
+
+snippet -> "expression -> action"
+${1:{${2:pattern}}} -> ${0:response}
+endsnippet
+
+snippet File.r "file read" 
+File.read!("${0:file_name_with_relative_path}")
+endsnippet
+
+snippet def "function definition" 
+def ${1:function_name}${2:(${3:args})} do
+  $0
+end
+endsnippet
+
+snippet defm "defmodule"
+defmodule ${1:ModuleName} do
+  $0
+end
+endsnippet
+
+snippet spawn "spawn"
+  spawn(${0:f}
+  )
+endsnippet
+
+snippet "[Gg]en[Ss](erver)?" "gen_server template" r
+use GenServer
+
+${1:def init(${2:_}) do
+  $3
+  {:ok, ${4:Module}.new}
+end}
+
+${5:def handle_call({:${6:match}, ${7:object}}, _, ${8:server_process}) do
+  $0
+end}
+
+${9:def start do
+  GenServer.start(${10:__MODULE__}, nil)
+end}
+
+endsnippet
