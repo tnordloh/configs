@@ -3,8 +3,6 @@
 """""""""""""""
 
 
-"setting colors, for compatibility with iTerm2
-set t_Co=256
 "setting cursor, for better cursor guiding in iTerm2
 let &t_ti.="\<Esc>]1337;HighlightCursorLine=true\x7"
 "let &t_te.="\<Esc>]1337;HighlightCursorLine=false\x7"
@@ -51,15 +49,15 @@ set visualbell t_vb=  "turn off flashing when top/bottom of file is reached
 
 set fileformats=unix
 execute pathogen#infect()
+set  rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim/
 set laststatus=2
-set statusline +=%{fugitive#statusline()}
-set statusline+=%f                " Path to the file
-set statusline+=\ -\              " Separator
-set statusline+=FileType:         " Label
-set statusline+=%y                " Filetype of the file
-set statusline+=%l                " Current line
-set statusline+=/                 " Separator
-set statusline+=%L                " Total lines
+set t_Co=256
+
+"""
+"gundo stuff
+if has('python3')
+    let g:gundo_prefer_python3 = 1
+endif
 """"""""""""
 """ Keys """
 """"""""""""
@@ -116,16 +114,8 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips","MyUltiSnips"]
 let g:UltiSnipsEditSplit="horizontal"
 
 set number
-"let <C-r><C-"> = 'xi\"p'
 map <C-r><C-l> xi"<ESC>p
 
 set pastetoggle=<F7>
-"let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-"
-"let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-"let &t_SI ="\<Esc>]12;purple\x7"
-"let &t_EI = "\<Esc>]12;blue\x7"
-"red is E31328
-let &t_SI = "\<Esc>Ptmux;\<Esc>\033]PlE31328\033\\"
-let &t_SR = "\<Esc>Ptmux;\<Esc>\033]PlE31328\033\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\033]PlE31328\033\\"
+
+set mouse=a

@@ -14,3 +14,5 @@ git clone git://github.com/vim-ruby/vim-ruby.git
 git clone git://github.com/tpope/vim-sleuth.git
 git clone https://github.com/honza/vim-snippets.git
 git clone https://github.com/benmills/vimux
+git clone //github.com/wincent/command-t.git
+http://github.com/sjl/gundo.vim.git

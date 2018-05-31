@@ -47,3 +47,10 @@ source ~/.private_variables
 
 
  alias port='function _blah(){ export ICFP_PORT=$1; };_blah'
+
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
+. /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
